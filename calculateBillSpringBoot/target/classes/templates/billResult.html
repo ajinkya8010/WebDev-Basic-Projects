@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill and User Details</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Electricity Bill and User Details</h1>
+        <p><strong>First Name:</strong> <span th:text="${firstName}"></span></p>
+        <p><strong>Last Name:</strong> <span th:text="${lastName}"></span></p>
+        <p><strong>Address:</strong> <span th:text="${address}"></span></p>
+        <p><strong>Units Consumed:</strong> <span th:text="${units}"></span></p>
+        <p><strong>Electricity Bill:</strong> Rs. <span th:text="${bill.toFixed(2)}"></span></p>
+    </div>
+</body>
+</html>

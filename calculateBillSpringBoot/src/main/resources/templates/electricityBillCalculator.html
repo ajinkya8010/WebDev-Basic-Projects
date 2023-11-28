@@ -1,0 +1,129 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Calculator</title>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Electricity Bill Calculator</h1>
+        <form id="billForm">
+            <div class="form-group">
+                <label for="units">Enter Units Consumed:</label>
+                <input type="number" class="form-control" id="units" name="units" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+        <div id="result" class="mt-3"></div>
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#billForm").submit(function (e) {
+                e.preventDefault();
+                calculateBill();
+            });
+
+            function calculateBill() {
+                var units = parseFloat($("#units").val());
+                var bill = 0;
+
+                if (units <= 50) {
+                    bill = units * 3.50;
+                } else if (units <= 150) {
+                    bill = 50 * 3.50 + (units - 50) * 4.00;
+                } else if (units <= 250) {
+                    bill = 50 * 3.50 + 100 * 4.00 + (units - 150) * 5.20;
+                } else {
+                    bill = 50 * 3.50 + 100 * 4.00 + 100 * 5.20 + (units - 250) * 6.50;
+                }
+
+                $("#result").html("Your Electricity Bill: Rs. " + bill.toFixed(2));
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Calculator</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Electricity Bill Calculator</h1>
+        <form id="billForm">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="units">Enter Units Consumed:</label>
+                <input type="number" class="form-control" id="units" name="units" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+        <div id="result" class="mt-3"></div>
+    </div>
+    
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- JavaScript for bill calculation -->
+<script>
+    $(document).ready(function () {
+        $("#billForm").submit(function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Capture user inputs
+            var firstName = $("#firstName").val();
+            var lastName = $("#lastName").val();
+            var address = $("#address").val();
+            var units = parseFloat($("#units").val());
+
+            // Calculate the electricity bill
+            var bill = calculateElectricityBill(units);
+
+            // Display the user information and bill
+            $("#result").html("First Name: " + firstName + "<br>Last Name: " + lastName + "<br>Address: " + address + "<br>Units Consumed: " + units + "<br>Your Electricity Bill: Rs. " + bill.toFixed(2));
+        });
+
+        function calculateElectricityBill(units) {
+            // Calculate the electricity bill based on your rates
+            // ...
+
+            // Example calculation logic (replace with your own):
+            if (units <= 50) {
+                return units * 3.50;
+            } else if (units <= 150) {
+                return 50 * 3.50 + (units - 50) * 4.00;
+            } else if (units <= 250) {
+                return 50 * 3.50 + 100 * 4.00 + (units - 150) * 5.20;
+            } else {
+                return 50 * 3.50 + 100 * 4.00 + 100 * 5.20 + (units - 250) * 6.50;
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

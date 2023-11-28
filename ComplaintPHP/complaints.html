@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Complaint</title>
+</head>
+<body>
+    <h2>Register Complaint</h2>
+    <form action="register_complaints.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br>
+
+        <label for="prn">PRN Number:</label>
+        <input type="text" name="prn" required><br>
+
+        <label for="complaint">Complaint:</label>
+        <textarea name="complaint" rows="4" required></textarea><br>
+
+        <button type="submit" name="register_complaint">Submit Complaint</button>
+    </form>
+</body>
+</html>
