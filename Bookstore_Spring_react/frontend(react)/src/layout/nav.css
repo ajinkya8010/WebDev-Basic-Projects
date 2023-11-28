@@ -1,0 +1,20 @@
+.flex-container
+{
+    display: flex;
+    background-color: black;
+}
+.flex-container>div
+{
+    color: antiquewhite;
+    padding: 10px;
+    margin: 20px;
+}
+.icon
+{
+    background-color: yellow;
+    
+}
+.text
+{
+    color: black;
+}
