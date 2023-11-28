@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Operations with jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Initial array
+      var myArray = [1, 2, 3, 4, 5];
+
+      // Display the initial array
+      displayArray('Initial Array', myArray);
+
+      // Add an element to the array
+      myArray.push(6);
+      displayArray('Array after pushing 6', myArray);
+
+      // Remove an element from the array
+      myArray.pop();
+      displayArray('Array after popping', myArray);
+
+      // Update an element in the array
+      updateElement(2, 10, myArray);
+    });
+
+    function displayArray(message, array) {
+      $('#output').append('<br>' + message + ': ' + array.join(', '));
+    }
+
+    function updateElement(indexToUpdate, newValue, array) {
+      if (indexToUpdate >= 0 && indexToUpdate < array.length) {
+        array[indexToUpdate] = newValue;
+        displayArray('Array after updating element at index ' + indexToUpdate + ' to ' + newValue, array);
+      } else {
+        $('#output').append('<br>Invalid index for update operation');
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="output"></div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting with JavaScript</title>
+</head>
+<body>
+    Enter the numbers to sort: <input id="number" type="number" placeholder="Enter here">
+    <br>
+    <button id="addBtn" onclick="sortnum()" value="ADD">Add</button>
+    <button id="searchBtn" onclick="searchnum()" value="SEARCH">Search</button>
+    <input id="searchInput" type="number" placeholder="Enter index to search">
+    <br>
+    <div id="area1" style="height: 300px; width: 400px; border: solid; margin-top: 50px;"></div>
+    <div id="area2" style="height: 300px; width: 400px; border: solid; margin-top: 50px;"></div>
+
+    <script>
+        const arr = [];
+        const arr1 = [];
+        var count = 0;
+
+        function sortnum() {
+            const num = document.getElementById("number").value;
+            arr[count] = num;
+            count++;
+
+            const newelement1 = document.getElementById("area1");
+            newelement1.innerHTML = '';
+
+            for (let i = 0; i < count; i++) {
+                newelement1.innerHTML += arr[i] + '<br>';
+            }
+
+            arr1.length = 0; // Clear the sorted array
+            arr1.push(...arr); // Copy elements to arr1
+            arr1.sort(function(a, b) {
+                return a - b;
+            });
+
+            const newelement2 = document.getElementById("area2");
+            newelement2.innerHTML = '';
+
+            for (let i = 0; i < count; i++) {
+                newelement2.innerHTML += arr1[i] + '<br>';
+            }
+
+            document.getElementById("number").value = ""; // Clear the input field after adding.
+        }
+
+        function searchnum() {
+            const indexToSearch = document.getElementById("searchInput").value;
+
+            if (indexToSearch >= 0 && indexToSearch < count) {
+                alert("Element at index " + indexToSearch + " in the sorted array is: " + arr1[indexToSearch]);
+            } else {
+                alert("Invalid index. Please enter a valid index.");
+            }
+        }
+    </script>
+</body>
+</html>
