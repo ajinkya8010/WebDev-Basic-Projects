@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background: #081b29; 
+  color: #ededed; 
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: black;
+}
+
+.logo{
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a{
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 25px;
+}
+
+.navbar a.active{
+    color: #081b29;
+}
+
+
+.home{
+    height: 70vh;
+    display: flex;
+    align-items: center;   
+    padding: 0 10%; 
+    justify-content: space-between;
+}
+
+.home-content{
+    max-width: 600px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+
+
+.experience{
+    height: 0vh;
+    display: flex;
+    align-items: center;   
+    padding: 0 10%; 
+    justify-content: left;
+
+}
+
+.experience-content{
+    max-width: 600px;
+}
+
+.projects{
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%; 
+    justify-content: right;
+}
+
+.projects-content{
+    max-width: 600px;
+}
+
+.skills{
+    height: 50vh;
+    display: flex;
+    align-items: center;   
+    padding: 0 10%; 
+    justify-content: left;
+
+}
+
+.skills-content{
+    max-width: 600px;
+}
+
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -10;
+  }
+  
+  /* Add some content at the bottom of the video/page */
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }

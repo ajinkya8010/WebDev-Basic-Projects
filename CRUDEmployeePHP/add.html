@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+</head>
+<body>
+    <h2>Add Employee</h2>
+    <form action="add_employee.php" method="post">
+        <label for="employee_name">Name:</label>
+        <input type="text" name="employee_name" required><br>
+
+        <label for="employee_position">Position:</label>
+        <input type="text" name="employee_position" required><br>
+
+        <label for="employee_salary">Salary:</label>
+        <input type="number" name="employee_salary" required><br>
+
+        <button type="submit" name="add_employee">Add Employee</button>
+    </form>
+</body>
+</html>
